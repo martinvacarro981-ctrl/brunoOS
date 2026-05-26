@@ -1,1 +1,341 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrunoOS</title>  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
+    body {
+      background: #ffffff;
+      color: #111827;
+    }
+
+    header {
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #0891b2;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #374151;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #0891b2;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom, #ecfeff, #ffffff);
+      padding: 100px 20px;
+    }
+
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      color: #4b5563;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 28px;
+      border-radius: 12px;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #0891b2;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0e7490;
+      transform: scale(1.03);
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid #d1d5db;
+    }
+
+    .btn-secondary:hover {
+      border-color: #0891b2;
+      color: #0891b2;
+    }
+
+    .preview {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .preview-top {
+      background: #f3f4f6;
+      padding: 12px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .circle {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .red { background: #f87171; }
+    .yellow { background: #facc15; }
+    .green { background: #4ade80; }
+
+    .preview-body {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .big-logo {
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      border-radius: 50%;
+      background: #0891b2;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      padding: 100px 20px;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 60px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .feature-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      padding: 35px;
+      transition: 0.2s;
+      background: white;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .feature-card h3 {
+      margin: 15px 0;
+      font-size: 28px;
+    }
+
+    .download {
+      background: #0891b2;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .download h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .download p {
+      font-size: 20px;
+      margin-bottom: 35px;
+      color: #cffafe;
+    }
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 30px;
+      text-align: center;
+      color: #6b7280;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #cffafe;
+    }
+  </style></head>
+<body>  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <div class="logo-icon">D</div><div>
+      <h2>BrunoOS</h2>
+      <p>Basado en Debian</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#features">Características</a>
+    <a href="#download">Descargar</a>
+  </nav>
+</div>
+
+  </header>  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>BrunoOS</h1><p>
+      Un sistema operativo elegante, moderno y estable basado en Debian.
+    </p>
+
+    <div class="buttons">
+      <button class="btn btn-primary" onclick="downloadOS()">
+        Descargar BrunoOS
+      </button>
+
+      <button class="btn btn-secondary">
+        Más información
+      </button>
+    </div>
+
+    <p id="message"></p>
+  </div>
+
+  <div class="preview">
+    <div class="preview-top">
+      <div class="circle red"></div>
+      <div class="circle yellow"></div>
+      <div class="circle green"></div>
+    </div>
+
+    <div class="preview-body">
+      <div class="big-logo">D</div>
+
+      <h2>BrunoOS</h2>
+      <p>Linux basado en Debian</p>
+    </div>
+  </div>
+</div>
+
+  </section>  <section class="features" id="features">
+    <div class="container">
+      <h2>Características</h2><div class="feature-grid">
+    <div class="feature-card">
+      <h3>⚡ Rápido</h3>
+      <p>Optimizado para PCs modernas y antiguas.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>🛡️ Seguro</h3>
+      <p>Basado en Debian para estabilidad y seguridad.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>🎨 Elegante</h3>
+      <p>Diseño moderno inspirado en Linux Mint.</p>
+    </div>
+  </div>
+</div>
+
+  </section>  <section class="download" id="download">
+    <div class="container">
+      <h2>Descargá BrunoOS</h2><p>
+    Descubrí una experiencia Linux limpia, rápida y moderna.
+  </p>
+
+  <button class="btn btn-secondary" onclick="downloadOS()">
+    Descargar ISO
+  </button>
+</div>
+
+  </section>  <footer>
+    © 2026 BrunoOS — Basado en Debian Linux.
+  </footer>  <script>
+    function downloadOS() {
+      document.getElementById('message').innerText = 'La descarga comenzará pronto...';
+    }
+  </script></body>
+                                </html>
